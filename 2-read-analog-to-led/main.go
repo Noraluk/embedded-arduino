@@ -1,6 +1,7 @@
 package main
 
 import (
+	"embedded-arduino/utils"
 	"machine"
 	"time"
 )
@@ -23,11 +24,7 @@ func main() {
 
 	for {
 		led.Set(channel, uint32(ldr.Get()/257))
-		delay(100)
+		utils.Delay(100)
 	}
 
-}
-
-func delay(t uint32) {
-	time.Sleep(time.Duration(1000000 * t))
 }

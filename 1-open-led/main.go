@@ -1,8 +1,8 @@
 package main
 
 import (
+	"embedded-arduino/utils"
 	"machine"
-	"time"
 )
 
 func main() {
@@ -14,11 +14,7 @@ func main() {
 	for {
 		led.Set(ledSwitch)
 		ledSwitch = !ledSwitch
-		delay(500)
+		utils.Delay(500)
 	}
 
-}
-
-func delay(t uint32) {
-	time.Sleep(time.Duration(1000000 * t))
 }
